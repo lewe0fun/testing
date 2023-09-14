@@ -1,4 +1,4 @@
-package Shop;
+package hw1.Shop;
 
 public class Product implements Comparable<Product> {
     private Integer cost; // Стоимость продукта
@@ -29,5 +29,13 @@ public class Product implements Comparable<Product> {
     @Override
     public int compareTo(Product o) {
         return Integer.compare(this.cost, o.cost);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "cost=" + cost +
+                ", title='" + title + '\'' +
+                '}';
     }
 }

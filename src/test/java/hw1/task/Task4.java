@@ -1,4 +1,4 @@
-package task;
+package hw1.task;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

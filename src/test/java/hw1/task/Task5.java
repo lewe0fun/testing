@@ -1,4 +1,4 @@
-package task;
+package hw1.task;
 
 import static java.lang.Integer.sum;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

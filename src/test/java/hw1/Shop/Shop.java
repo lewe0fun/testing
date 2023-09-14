@@ -1,4 +1,4 @@
-package Shop;
+package hw1.Shop;
 
 import java.util.ArrayList;
 import java.util.List;

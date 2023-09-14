@@ -1,10 +1,9 @@
-package Shop;
+package hw1.Shop;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.map;
 
 public class ShopTest {
 
