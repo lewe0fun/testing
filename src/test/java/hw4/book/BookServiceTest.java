@@ -11,14 +11,15 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.mockito.Mockito.mock;
 
 class BookServiceTest {
+    private BookRepository bookRepository;
     private BookService bookService;
-    Book book1, book2;
+   private Book book1, book2;
 
 
     @BeforeEach
     void setUp() {
 
-        BookRepository bookRepository = mock(BookRepository.class);
+        bookRepository = mock(BookRepository.class);
         bookService = new BookService(bookRepository);
         book1 = new Book("1", "Book1", "Author1");
         book2 = new Book("2", "Book2", "Author2");
@@ -28,6 +29,7 @@ class BookServiceTest {
     void findBookByIdTest() {
         Mockito.when(bookService.findBookById("1")).thenReturn(book1);
         assertThat(bookService.findBookById("1").getTitle()).isEqualTo("Book1");
+        Mockito.verify(bookRepository, Mockito.times(1)).findById("1");
 
 
     }
@@ -40,6 +42,6 @@ class BookServiceTest {
                 () -> assertThat(bookService.findAllBooks().contains(book1)).isEqualTo(true),
                 () -> assertThat(bookService.findAllBooks().contains(book2)).isEqualTo(true)
         );
-
+        Mockito.verify(bookRepository,Mockito.times(3)).findAll();
     }
 }
